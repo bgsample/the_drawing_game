@@ -1,0 +1,22 @@
+{% extends "accounts/base.html" %}
+{% load gravatar %}
+
+{% block main %}
+	<h1>Welcome, {{ request.user.pk }}{{ request.user.username }} to accounts.templates.accounts.settings.html.</h1>
+	<h2>Here you can update your user settings. 
+		You can change your password <a href="{% url change_password %}">here</a>.</h2>
+	<p>Here's your gravatar:</p>
+	<p><img src="{{ request.user.email|gravatar_url }}"></p>
+		
+	<form action="." method="post" accept-charset="utf-8">
+		{% csrf_token %}
+		{% for field in form.visible_fields %}
+			{% if forloop.first %}
+				<div style="display:none">{{ field.label_tag }}: {{ field }}</div>
+			{% else %}
+				{{ field.label_tag }}: {{ field }}
+			{% endif %}
+		{% endfor %}
+		<p><input type="submit" value="Update &rarr;"></p>
+	</form>
+{% endblock %}

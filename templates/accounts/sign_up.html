@@ -1,0 +1,10 @@
+{% extends "accounts/base.html" %}
+
+{% block main %}
+	<h1>Welcome to accounts.templates.accounts.sign_up.html.</h1>
+	<form action="." method="post" accept-charset="utf-8">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<p><input type="submit" value="Sign Up &rarr;"></p>
+	</form>
+{% endblock %}
