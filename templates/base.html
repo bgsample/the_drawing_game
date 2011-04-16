@@ -10,14 +10,32 @@
 	</title>
 	<meta name="keywords" content="{{ meta_keywords }}">
 	<meta name="description" content="{{ meta_description }}">
-	<link rel="stylesheet" href="/static/css/base.css" type="text/css" media="screen" charset="utf-8">
 	<link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen" charset="utf-8">
-
+	<link rel="stylesheet" href="/static/css/base.css" type="text/css" media="screen" charset="utf-8">
+	
+	{% block head %}{% endblock %}
 	
 </head>
 <body>
-	{% block site_wrapper %}
+	<header>
+		<h1><a href="/">The Drawing Game</a></h1>
 		
-	{% endblock %}
+		<nav id="user_settings">
+			{% if user.is_authenticated %}
+				<p>Hello, {{ user.username }}.</p>
+				<ul>
+					<li><a href="{% url settings %}">Settings</a></li>
+					<li><a href="{% url sign_out %}">Sign Out</a></li>
+				</ul>
+			{% else %}
+				<a href="{% url sign_up %}">Sign Up</a> or <a href="{% url sign_in %}">Sign In</a>
+			{% endif %}
+		</div>
+		
+	</header>
+	
+
+	{% block main %}{% endblock %}
+	{% block footer %}{% endblock %}
 </body>
 </html>

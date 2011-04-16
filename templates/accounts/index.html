@@ -1,5 +1,20 @@
-{% extends "accounts/base.html" %}
+{% extends "base.html" %}
 
 {% block main %}
-	<h1>Welcome to accounts.templates.accounts.index.html.</h1>
+	{% if user.is_authenticated %}
+		<p>[placeholder for 'play a new game']</p>
+		<p>[placeholder for 'your move']</p>
+		<p>[placeholder for 'your games']</p>
+	{% else %}	
+		<h1>Welcome to The Drawing Game!</h1>
+		<p>like the game of telephone, the drawing game involves passing a 
+		message along from player to player. the difference with the
+		drawing game is the message alternates from text to drawing.
+		in other words, the first relayer of the message passes a sentence
+		along to the next player, who then draws a picture based on that
+		sentence, and the next player writes a sentence about the picture...
+		and so on.</p>
+	{% endif %}
+	
+	
 {% endblock %}

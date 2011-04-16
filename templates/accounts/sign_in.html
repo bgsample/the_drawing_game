@@ -1,16 +1,15 @@
-{% extends "accounts/base.html" %}
+{% extends "base.html" %}
 
 {% block main %}
 	{% if form.errors %}
 		<ul class="errorlist">
 			<li>You entered an invalid username or password.</li>
 		</ul>
-		<br>
 	{% endif %}
+	<h1>Sign In</h1>
 	<form action="{% url sign_in %}" method="post" accept-charset="utf-8">
 		{% csrf_token %}
 		<table summary="Sign In" id="signin">
-			<caption>Sign In</caption>
 			<tr>
 				<td>{{ form.username.label_tag }}</td>
 				<td>{{ form.username }}</td>

@@ -181,7 +181,7 @@ LOGGING = {
 ##################
 # AUTHENTICATION #
 ##################
-LOGIN_REDIRECT_URL = '/settings/'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = '/sign-out/'
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 

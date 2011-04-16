@@ -1,0 +1,69 @@
+html {
+	background-color: #C8A33F;
+}
+
+body {
+	margin: 60px;
+	background-color: #FFF;
+	padding: 60px 40px 80px;
+	width: 650px;
+}
+
+a { color: #42AB14; }
+a:hover { color: #333; }
+
+body > header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #333;
+	color: #FFF;
+}
+
+body > header a { color: #DDD; }
+body > header a:hover { color: #68C83F; }
+
+body > header > h1 {
+	float: left;
+	padding: 10px 200px 10px 60px;
+	font-size: 30px;
+}
+body > header > h1 a { text-decoration: none; }
+
+ul {
+	list-style: none;
+}
+
+nav#user_settings {
+	min-width: 300px;
+	margin-top: 10px;
+}
+
+nav#user_settings ul li {
+	float: left;
+	margin-right: 10px;
+}
+
+h1 {
+	font-size: 24px;
+}
+
+form {
+	padding: 20px;
+}
+
+#user_edit_form img {
+	float: left;
+	padding: 20px;
+}
+
+form table tr td {
+	padding: 10px;
+	border: 1px solid #DDD;
+	text-align: right;
+}
+
+form table tr td input[type="text"], form table tr td input[type="password"] {
+	width: 200px;
+}
