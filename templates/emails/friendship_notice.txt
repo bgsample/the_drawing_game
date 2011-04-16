@@ -1,0 +1,7 @@
+{{ to_user }},
+
+{{ from_user }} has friended you on the-drawing-game.com!
+you can check {{ from_user }}'s profile at {{ from_user }}.com.
+
+respectfully yours,
+the drawing game team

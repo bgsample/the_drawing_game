@@ -181,8 +181,15 @@ LOGGING = {
 ##################
 # AUTHENTICATION #
 ##################
-
-
 LOGIN_REDIRECT_URL = '/settings/'
 LOGOUT_URL = '/sign-out/'
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+
+##################
+#     EMAIL      #
+##################
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'b.gesiak@gmail.com'
+EMAIL_HOST_PASSWORD = open( os.path.join( os.environ['HOME'], '.django/.the_drawing_game_emailpw' ) ).read().strip()
+EMAIL_PORT = 587
